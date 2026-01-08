@@ -10,10 +10,10 @@
   <p align="center">
     <i>Allows a newer user to create abilities with a GUI!</i>
     <br /> <br />
-    <a href="(ill put a link here when I get it)"><strong>(update link) Download</strong></a>
+    <a href="https://github.com/invatorzen/ABRA/releases"><strong>Download</strong></a>
     <br />
     <br />
-    <a href="https://github.com/invatorzen/InvatorzenPSDKPlugins/issues">Report Bugs</a>
+    <a href="https://github.com/invatorzen/ABRA/issues">Report Bugs</a>
       
 
   [![python badge](https://forthebadge.com/images/badges/made-with-python.svg)](https://forthebadge.com)
@@ -41,7 +41,7 @@ This is very early in development, is usable but will receieve updates if people
 ## Installation
 
 ### Using Executable
-Download the latest version from the releases page and run `ABRA.exe`.
+Download the latest version from the [releases page](https://github.com/invatorzen/ABRA/releases) and run `ABRA.exe`.
 
 ## Internationalization
 
