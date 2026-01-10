@@ -8,9 +8,9 @@
   <h3 align="center">A.B.R.A.</h3>
 
   <p align="center">
-    <i>Allows a newer user to create abilities with a GUI!</i>
+    <i>Ability Builder & Refinement Assistant for Pokémon SDK</i>
     <br /> <br />
-    <a href="https://github.com/invatorzen/ABRA/releases"><strong>Download</strong></a>
+    <a href="https://github.com/invatorzen/ABRA/releases"><strong>Download v0.2.0</strong></a>
     <br />
     <br />
     <a href="https://github.com/invatorzen/ABRA/issues">Report Bugs</a>
@@ -24,22 +24,32 @@
 
 ## Overview
 
-A.B.R.A. (Ability Builder & Refinement Assistant) is a specialized tool designed for Pokémon SDK (PSDK) developers to create and implement battle abilities without requiring extensive knowledge of Ruby scripting or the internal data structures of the SDK. It provides a visual interface for defining ability metadata, selecting battle events / triggers, and generating the necessary logic blocks.
+A.B.R.A. (Ability Builder & Refinement Assistant) is a specialized tool designed for Pokémon SDK (PSDK) developers to create and implement battle abilities without requiring extensive knowledge of Ruby scripting or the internal data structures of the SDK. It provides a visual interface for defining ability metadata, selecting battle events/triggers, and generating the necessary logic blocks.
 
-This is very early in development, is usable but will receive updates if people like this program. I will also take suggestions for features, improvements, and new commonly used conditions for returns.
+## ✨ What's New in v0.2.0
+
+- **Advanced Code Editor** - Refined layout with read-only code separation and 10-space indentation lock.
+- **Enhanced Formatter** - Global full-script formatting with robust Ruby block parsing.
+- **Standardized UI** - Improved button aesthetics and a new dual-icon theme toggle across all views.
+- **60+ New Conditions** - Expanded library for end-of-turn events with stat and handler checks.
+- **4 New Quick Actions** - Move Priority, Force Switch, Set Effect, Remove Effect.
+
+See [CHANGELOG.md](CHANGELOG.md) for full details.
 
 ## Features
 
 - **Project Integration**: Connects directly to existing PSDK projects by loading .studio files.
 - **Metadata Management**: Define internal symbols, and multi-language names and descriptions.
-- **Event / Trigger System**: Select from a wide variety of battle events / triggers, including switch-in events, end-of-turn actions, damage modification, and stat changes.
+- **Event / Trigger System**: Select from 20+ battle events/triggers, including switch-in events, end-of-turn actions, damage modification, and stat changes.
 - **Script Generation**: Automatically generates a script compatible with PSDK for your new ability.
-- **Condition Library**: Access a library of over 80 pre-defined battle conditions (e.g., weather checks, type effectiveness, HP thresholds) with a searchable interface.
-- **Code Preview**: Review the generated Ruby and JSON structures before saving them to the project directory.
+- **Condition Library**: Access a library of **140+ pre-defined battle conditions** with a searchable interface.
+- **Advanced Code Editor**: Dedicated workspace with 10-space PSDK indentation and read-only / editable code separation.
+- **Intelligent Formatter**: Global script formatting with nested block support and cursor preservation.
+- **Ability Updates**: Edit and update existing abilities with proper file overwriting.
 
 ## Quick Actions
 
-ABRA includes 17 quick action buttons for inserting common ability code:
+ABRA includes **17 quick action buttons** for inserting common ability code:
 
 | Action | Description |
 |--------|-------------|
@@ -61,6 +71,22 @@ ABRA includes 17 quick action buttons for inserting common ability code:
 | **Set Effect** | Add battle effects (Confusion, Flinch, Encore, Taunt, Torment, Disable, Substitute) |
 | **Remove Effect** | Remove battle effects from a Pokémon |
 
+## Condition Categories
+
+The condition picker organizes 140+ conditions into searchable categories:
+
+| Category | Examples |
+|----------|----------|
+| **Owner State** | Owner is alive/dead, HP <= 50%, is asleep, has Magic Guard, is Poison-type |
+| **Battlers** | Owner is on field, any battler asleep, has foes, has adjacent allies |
+| **Handler Checks** | Can heal, burn/poison/freeze can be applied |
+| **Stat Checks** | Attack can be raised, speed can be lowered |
+| **Weather & Terrain** | Rain (any), sunny, hail, grassy terrain, electric terrain |
+| **Target/Attacker** | Target is dead, attacker is ally/enemy, target type checks |
+| **Skill Properties** | Skill is physical/special/status, made contact, is critical hit |
+| **Type Matchups** | Super effective, not very effective, STAB, skill type checks |
+| **Probability** | 10%/30%/50% chance |
+
 ## Installation
 
 ### Using Executable
@@ -68,7 +94,7 @@ Download the latest version from the [releases page](https://github.com/invatorz
 
 ## Internationalization
 
-ABRA supports multiple languages for the interface and the condition library. The current supported languages are:
+ABRA supports multiple languages for the interface and the condition library:
 - English
 - French
 - Spanish
@@ -89,3 +115,9 @@ The generated Ruby code utilizes the `Battle::Effects::Ability` base class and i
 - **Attacker**: The Pokémon using a move (previously called "Launcher")
 - **Target**: The Pokémon receiving the effect
 - **@target**: The ability owner (the Pokémon with this ability)
+- **Battlers**: All alive Pokémon on the field (available in end-of-turn events)
+- **Logic**: The battle logic controller (provides access to handlers)
+
+## Contributing
+
+Suggestions for features, improvements, and new commonly used conditions are welcome! Please open an issue on GitHub.
