@@ -26,7 +26,7 @@
 
 A.B.R.A. (Ability Builder & Refinement Assistant) is a specialized tool designed for Pokémon SDK (PSDK) developers to create and implement battle abilities without requiring extensive knowledge of Ruby scripting or the internal data structures of the SDK. It provides a visual interface for defining ability metadata, selecting battle events / triggers, and generating the necessary logic blocks.
 
-This is very early in development, is usable but will receieve updates if people like this program. I will also take suggestions for features, improvements, and new commonly used conditions for returns.
+This is very early in development, is usable but will receive updates if people like this program. I will also take suggestions for features, improvements, and new commonly used conditions for returns.
 
 ## Features
 
@@ -35,8 +35,31 @@ This is very early in development, is usable but will receieve updates if people
 - **Event / Trigger System**: Select from a wide variety of battle events / triggers, including switch-in events, end-of-turn actions, damage modification, and stat changes.
 - **Script Generation**: Automatically generates a script compatible with PSDK for your new ability.
 - **Condition Library**: Access a library of over 80 pre-defined battle conditions (e.g., weather checks, type effectiveness, HP thresholds) with a searchable interface.
-- **Quick Actions**: Insert common battle effects like changing HP, modifying stats, or displaying messages with a single click.
 - **Code Preview**: Review the generated Ruby and JSON structures before saving them to the project directory.
+
+## Quick Actions
+
+ABRA includes 17 quick action buttons for inserting common ability code:
+
+| Action | Description |
+|--------|-------------|
+| **Return Condition** | Insert a conditional return with if/unless support and multiple conditions |
+| **Insert If** | Add an if/unless condition block with and/or logic |
+| **Change HP** | Heal, damage, or set HP with dynamic amount options |
+| **Stat Change** | Modify ATK, DEF, SPD, SPA, SPD, ACC, EVA stats |
+| **Apply Status** | Apply poison, burn, freeze, paralysis, sleep, confusion, flinch, or cure |
+| **Change Weather** | Set rain, sun, sandstorm, hail, or clear weather |
+| **Change Terrain** | Set electric, grassy, misty, psychic terrain, or clear |
+| **Modify Item** | Give, remove, or swap held items |
+| **Change Form** | Modify Pokémon form |
+| **Change Type** | Modify Pokémon type |
+| **Set Hazard** | Deploy Stealth Rock, Spikes, Toxic Spikes, or Sticky Web |
+| **Show Ability** | Display the ability activation animation |
+| **Display Message** | Show battle messages |
+| **Move Priority** | Modify move priority (+3 to -7) |
+| **Force Switch** | Force a Pokémon to switch out |
+| **Set Effect** | Add battle effects (Confusion, Flinch, Encore, Taunt, Torment, Disable, Substitute) |
+| **Remove Effect** | Remove battle effects from a Pokémon |
 
 ## Installation
 
@@ -55,8 +78,14 @@ Language settings are persisted in the local configuration and can be switched a
 ## Technical Details
 
 ABRA automates the creation of three critical components for PSDK:
-1. **JSON Data**: Generates the ability data file located in `Data/Studio/abilities/`.
-2. **Ruby Logic**: Creates a context-aware Ruby script in `scripts/1 ABRA_Scripts/00 Effects/01 Abilities/`.
+1. **JSON Data**: Generates the ability data file located in `Data/Studio/abilities/` using the db_symbol as filename.
+2. **Ruby Logic**: Creates a context-aware Ruby script in `scripts/00001 ABRA_Scripts/00000 Effects/00000 Abilities/` with indexed filenames (e.g., `00000 FlashFire.rb`).
 3. **Text Data**: Updates the local text database (CSV) for ability names and descriptions.
 
 The generated Ruby code utilizes the `Battle::Effects::Ability` base class and implements hooks that interact with the PSDK battle logic handlers (DamageHandler, StatChangeHandler, etc.).
+
+## Terminology
+
+- **Attacker**: The Pokémon using a move (previously called "Launcher")
+- **Target**: The Pokémon receiving the effect
+- **@target**: The ability owner (the Pokémon with this ability)
