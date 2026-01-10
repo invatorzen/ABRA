@@ -6,6 +6,9 @@ All notable changes to A.B.R.A. (Ability Builder & Refinement Assistant) will be
 
 ### New Features
 
+#### DiscordRPC
+- **Share activity through discord** you can obviously disable this in discord, but this is more so something I personally like and want to see people using my program :3
+
 #### Code Editor UI Refinement
 - **Advanced Layout**: Read-only `def` and `end` method labels are now moved **outside** the editable code container to prevent any possible formatting issues.
 - **Focused Workspace**: The editable area's border strictly highlights user-modifiable code, providing a cleaner interface.
