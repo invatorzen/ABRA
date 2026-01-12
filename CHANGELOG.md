@@ -2,12 +2,64 @@
 
 All notable changes to A.B.R.A. (Ability Builder & Refinement Assistant) will be documented in this file.
 
-## 0.2.0 - 1/10/2026
+## 0.2.5 - 1/12/2026
 
 ### New Features
 
-#### DiscordRPC
-- **Share activity through discord** you can obviously disable this in discord, but this is more so something I personally like and want to see people using my program :3
+#### Code Editor Enhancements
+- **Keyboard Shortcuts**:
+  - `Ctrl+D` - Duplicate current line
+  - `Ctrl+/` - Toggle comment on current line
+  - `Ctrl+Shift+Up/Down` - Move line up/down
+  - `Ctrl+L` - Select entire current line
+  - `Ctrl+Shift+V` - Smart paste with auto-formatting
+  - Full undo/redo support
+- **Auto-Close Brackets & Quotes** - Typing `(`, `[`, `{`, `"`, or `'` automatically inserts the closing character
+- **Matching Bracket Highlight** - Visual highlighting of matching brackets when cursor is on one
+- **Line Numbers** - Click to toggle between file-level and editor-relative numbering
+- **Dynamic Editor Height** - Editor automatically grows/shrinks based on content, even on backspace
+- **Code Hover Tooltips** - Hover over parameters like `@target`, `handler`, `launcher` to see descriptions
+
+#### Ability Summary Panel
+- **Natural Language Explanations** - Real-time summary panel that translates your Ruby code into human-readable descriptions
+- **Live Updates** - Summary automatically updates as you type code
+- **Action Recognition** - Recognizes stat changes, HP modifications, status effects, type changes, weather/terrain, and more
+- **Condition Translation** - Converts Ruby conditions to readable phrases (e.g., `@target.hp_rate <= 0.5` → "when HP ≤ 50%")
+
+#### Parameter Info Tooltips
+- **Visible Info Labels** - All target dropdowns now show an info label below explaining what the selected parameter means
+- **17 Parameters Documented** - Descriptions for `@target`, `target`, `launcher`, `user`, `who`, `with`, `pokemon`, `skill`, `handler`, `logic`, `scene`, `hp`, `stat`, `status`, `power`, `reason`, `priority`
+
+#### Ability Overwrite Confirmation
+- **Confirmation Dialog** - When creating an ability that already exists, you're now prompted to confirm overwriting
+- **Safe Updates** - Prevents accidental overwrites of existing abilities
+
+### Code Refactoring
+- **Modular Dialog Files** - Extracted 17 dialog classes from `code_editor.py` into 8 organized files:
+  - `editor_dialogs_conditions.py` - Condition picker, Return, If dialogs
+  - `editor_dialogs_hp_stat.py` - HP and Stat dialogs
+  - `editor_dialogs_messages.py` - Message dialog
+  - `editor_dialogs_status.py` - Status dialog
+  - `editor_dialogs_environment.py` - Weather and Terrain dialogs
+  - `editor_dialogs_items.py` - Item dialog
+  - `editor_dialogs_pokemon.py` - Form and Type dialogs
+  - `editor_dialogs_battle.py` - Hazard, Move Priority, Force Switch dialogs
+  - `editor_dialogs_effects.py` - Set/Remove Effect dialogs
+- **Extracted Components** - `AbilityExplainer` and `TriggerBlock` moved to dedicated component files
+- **Centralized Constants** - `TRIGGER_PARAMS`, `CONDITION_CATEGORIES`, `FRIENDLY_CONDITIONS` moved to `logic/constants.py`
+- **New Tooltip Utilities** - `views/components/tooltip.py` with `Tooltip`, `TooltipComboBox`, `ParamInfoComboBox`, and `CodeEditorTooltip` classes
+- **Reduced File Size** - `code_editor.py` reduced from ~3500 lines to ~720 lines
+
+### UI Improvements
+- **Trigger Page Title** - Clear "Ability triggers" title displayed on trigger/event selection page
+- **Slightly Larger Dialogs** - Dialog heights increased to accommodate info labels
+
+---
+
+
+## 0.2.0 - 1/10/2026
+
+### New Features
 
 #### Code Editor UI Refinement
 - **Advanced Layout**: Read-only `def` and `end` method labels are now moved **outside** the editable code container to prevent any possible formatting issues.

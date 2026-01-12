@@ -10,13 +10,13 @@
   <p align="center">
     <i>Ability Builder & Refinement Assistant for Pokémon SDK</i>
     <br /> <br />
-    <a href="https://github.com/invatorzen/ABRA/releases"><strong>Download v0.2.0</strong></a>
+    <a href="https://github.com/invatorzen/ABRA/releases"><strong>Download v0.2.5</strong></a>
     <br />
     <br />
     <a href="https://github.com/invatorzen/ABRA/issues">Report Bugs</a>
       
 
-  [![python badge](https://forthebadge.com/images/badges/made-with-python.svg)](https://forthebadge.com)
+  [![python badge](https://forthebadge.com/images/badges/made-with-python.svg)](https://forthebadge)
   [![psdk badge](https://raw.githubusercontent.com/invatorzen/Invatorzens_PSDKPlugins/refs/heads/main/svgs/made_for_psdk.svg)](https://gitlab.com/pokemonsdk/pokemonsdk)
   [![invatorzen badge](https://raw.githubusercontent.com/invatorzen/Invatorzens_PSDKPlugins/refs/heads/main/svgs/made_by_invatorzen.svg)](https://github.com/invatorzen/InvatorzenPSDKPlugins/tree/main)
   </p>
@@ -24,28 +24,30 @@
 
 ## Overview
 
-A.B.R.A. (Ability Builder & Refinement Assistant) is a specialized tool designed for Pokémon SDK (PSDK) developers to create and implement battle abilities without requiring extensive knowledge of Ruby scripting or the internal data structures of the SDK. It provides a visual interface for defining ability metadata, selecting battle events/triggers, and generating the necessary logic blocks.
+A.B.R.A. (Ability Builder & Refinement Assistant) is a specialized tool designed for Pokémon SDK (PSDK) developers to create and implement battle abilities without requiring extensive knowledge of Ruby scripting. It provides a visual interface for defining ability metadata, selecting battle events/triggers, and generating functional logic blocks with a live natural language summary.
 
-## ✨ What's New in v0.2.0
+## ✨ What's New in v0.2.5
 
-- **Advanced Code Editor** - Refined layout with read-only code separation and 10-space indentation lock.
-- **Enhanced Formatter** - Global full-script formatting with robust Ruby block parsing.
-- **Standardized UI** - Improved button aesthetics and a new dual-icon theme toggle across all views.
-- **60+ New Conditions** - Expanded library for end-of-turn events with stat and handler checks.
-- **4 New Quick Actions** - Move Priority, Force Switch, Set Effect, Remove Effect.
+- **Ability Summary Panel** - Real-time natural language translation of your Ruby code.
+- **Parameter Intelligence** - Hover tooltips in the code editor and visible info labels for all target dropdowns.
+- **Productivity Shortcuts** - Ctrl+D (duplicate), Ctrl+/ (comment), Ctrl+Shift+Up/Down (move line), and more.
+- **Editor Polish** - Auto-closing brackets/quotes, matching bracket highlighting, and dynamic sizing.
+- **Safe Saves** - Confirmation dialogs when overwriting existing abilities.
+- **Modular Refactor** - Major codebase reorganization for better performance and stability.
 
 See [CHANGELOG.md](CHANGELOG.md) for full details.
 
 ## Features
 
 - **Project Integration**: Connects directly to existing PSDK projects by loading .studio files.
+- **Ability Summary**: Live panel that translates your Ruby code into human-readable descriptions as you type.
+- **Parameter Intelligence**: Context-aware tooltips for 17+ common parameters (@target, handler, skill, etc.).
 - **Metadata Management**: Define internal symbols, and multi-language names and descriptions.
-- **Event / Trigger System**: Select from 20+ battle events/triggers, including switch-in events, end-of-turn actions, damage modification, and stat changes.
-- **Script Generation**: Automatically generates a script compatible with PSDK for your new ability.
-- **Condition Library**: Access a library of **140+ pre-defined battle conditions** with a searchable interface.
-- **Advanced Code Editor**: Dedicated workspace with 10-space PSDK indentation and read-only / editable code separation.
-- **Intelligent Formatter**: Global script formatting with nested block support and cursor preservation.
-- **Ability Updates**: Edit and update existing abilities with proper file overwriting.
+- **Event / Trigger System**: Select from 20+ battle events/triggers with specialized logic hooks.
+- **Script Generation**: Automatically generates PSDK-compatible Ruby code.
+- **Condition Library**: Searchable interface with **140+ pre-defined battle conditions**.
+- **Advanced Code Editor**: Dedicated workspace with line numbers, syntax highlighting, and PSDK-standard indentation.
+- **Safe Ability Updates**: Edit existing abilities with overwrite protection and proper file management.
 
 ## Quick Actions
 
