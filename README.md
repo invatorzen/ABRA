@@ -10,7 +10,7 @@
   <p align="center">
     <i>Ability Builder & Refinement Assistant for Pokémon SDK</i>
     <br /> <br />
-    <a href="https://github.com/invatorzen/ABRA/releases"><strong>Download v0.2.5</strong></a>
+    <a href="https://github.com/invatorzen/ABRA/releases"><strong>Download v0.3.0</strong></a>
     <br />
     <br />
     <a href="https://github.com/invatorzen/ABRA/issues">Report Bugs</a>
@@ -26,14 +26,9 @@
 
 A.B.R.A. (Ability Builder & Refinement Assistant) is a specialized tool designed for Pokémon SDK (PSDK) developers to create and implement battle abilities without requiring extensive knowledge of Ruby scripting. It provides a visual interface for defining ability metadata, selecting battle events/triggers, and generating functional logic blocks with a live natural language summary.
 
-## ✨ What's New in v0.2.5
+## ✨ What's New in v0.3.0
 
-- **Ability Summary Panel** - Real-time natural language translation of your Ruby code.
-- **Parameter Intelligence** - Hover tooltips in the code editor and visible info labels for all target dropdowns.
-- **Productivity Shortcuts** - Ctrl+D (duplicate), Ctrl+/ (comment), Ctrl+Shift+Up/Down (move line), and more.
-- **Editor Polish** - Auto-closing brackets/quotes, matching bracket highlighting, and dynamic sizing.
-- **Safe Saves** - Confirmation dialogs when overwriting existing abilities.
-- **Modular Refactor** - Major codebase reorganization for better performance and stability.
+- **Visual Node Editor** - Create ability logic by connecting visual nodes instead of writing Ruby code. Includes 25+ trigger types, action nodes, condition branching, and utility nodes. This was the big focus of this update.
 
 See [CHANGELOG.md](CHANGELOG.md) for full details.
 
@@ -51,10 +46,11 @@ See [CHANGELOG.md](CHANGELOG.md) for full details.
 
 ## Quick Actions
 
-ABRA includes **17 quick action buttons** for inserting common ability code:
+ABRA includes **18 quick action buttons** for inserting common ability code:
 
 | Action | Description |
 |--------|-------------|
+| **Stop Ability** | Immediately stop ability execution with an optional condition |
 | **Return Condition** | Insert a conditional return with if/unless support and multiple conditions |
 | **Insert If** | Add an if/unless condition block with and/or logic |
 | **Change HP** | Heal, damage, or set HP with dynamic amount options |

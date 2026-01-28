@@ -2,6 +2,62 @@
 
 All notable changes to A.B.R.A. (Ability Builder & Refinement Assistant) will be documented in this file.
 
+## 0.3.0 - 1/28/2026
+
+### New Features
+
+#### Visual Node Editor
+- **Node-Based Logic Builder** - Create ability logic by connecting visual nodes instead of writing Ruby code
+- **Trigger Nodes** - 25+ trigger types available as draggable nodes with automatic categorization
+- **Action Nodes** - Visual nodes for HP changes, stat changes, status effects, weather, terrain, and more
+- **Condition Nodes** - If/Unless blocks with branching logic (true/false paths)
+- **Utility Nodes** - Raw code, comments, stop ability, and return value nodes
+- **Smart Connections** - Drag to connect nodes with automatic socket matching
+- **Node Positioning** - Drag nodes to reposition, positions saved with ability metadata
+- **Zoom & Pan** - Mouse wheel zoom and drag to pan the canvas
+- **Singleton Triggers** - Duplicate trigger prevention with visual feedback
+- **Tab Sync** - Visual and Script tabs stay synchronized when switching
+
+#### Discord Rich Presence
+- **Live Status Updates** - Shows current activity (editing, creating, browsing abilities)
+- **Project Display** - Shows the current PSDK project name
+- **Clean Shutdown** - Presence properly clears when closing ABRA
+
+#### Enhanced Message Nodes
+- **Three Message Types**:
+  - Raw text messages
+  - CSV-based messages (file_id + text_index)
+  - Pokémon variable messages with target substitution
+
+#### Trainer Party Editing
+- **Unlimited Party Size** - Removed the 6 Pokémon limit for trainer parties
+
+### Improvements
+
+#### Trigger Naming Consistency
+- **Unified Prevention Triggers**: Renamed triggers for consistent naming:
+  - "When a status application is prevented" → "When a status is prevented"
+  - "On Move Use (User Prevention)" → "User prevention"
+  - "On Move Use (Target Evasion)" → "Target prevention"
+- **Damage Modifier Consistency**: "Damage Multiplier" → "On Damage Calculation (Mod1)" to match Mod2/Mod3 pattern
+- **Immunity Trigger Clarity**: "When Testing Move Immunity" → "On move/ability immunity"
+
+#### Trigger Categorization
+- **New Transformation Category**: Moved "When Transforming" trigger to its own category, separate from Switch & Flee
+
+#### UI Polish
+- **Disabled Menu Items** - Context menu items for used triggers now show "(Used)" suffix with proper styling
+- **Dropdown Sorting** - "Custom" option now consistently appears last in dropdown menus
+
+### Bug Fixes
+- Fixed orphaned node cleanup when removing empty triggers
+- Fixed node position reset when adding new triggers after manual rearrangement
+- Fixed Discord presence lingering after closing ABRA
+- Fixed `[]` prefix appearing in Ruby script after adding/deleting triggers
+- Added missing `visual_node_global_check` translation
+
+---
+
 ## 0.2.5 - 1/12/2026
 
 ### New Features
