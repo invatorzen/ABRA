@@ -2,6 +2,40 @@
 
 All notable changes to A.B.R.A. (Ability Builder & Refinement Assistant) will be documented in this file.
 
+## 0.3.1 - 2/2/2026
+
+### New Features
+
+- **Bypass Hit Chance Hook** - New `on_bypass_chance_of_hit?` trigger allows abilities to guarantee moves hit (bypass accuracy check). Available under Accuracy & Priority category.
+- **Hook Installation Check** - ABRA now checks for required hook scripts on project load and auto-creates them if missing
+- **Node Editing** - Double-click or right-click → "Edit Node..." on action nodes to open dialogs pre-filled with current values. Dialogs now show context-aware dropdown options based on connected trigger.
+
+### Improvements
+
+- **Context Menu Cleanup** - Removed "Stop Ability" and "Return Value" from the top of the right-click menu; these are still accessible in the Utility submenu
+- **Context-Aware Scene Prefix** - `show_ability` and `wait_for_animation` nodes now generate the correct prefix based on trigger context:
+  - `handler.scene.visual` for triggers with `handler` param
+  - `scene.visual` for triggers with direct `scene` param  
+  - `@logic.scene.visual` for triggers without handler/scene (e.g., `on_bypass_chance_of_hit`)
+- **Script-to-Visual Sync** - When switching from Script to Visual tab, existing nodes now update their parameters to match the parsed code (e.g., changing `unless` to `if` now updates the node)
+- **Show Ability Quick Action** - Now creates two connected nodes (Show Ability Popup + Wait For Animation) matching script editor behavior
+- **Show Ability Node Size** - Increased default size from 195×60 to 280×65 for better visibility
+- **Folder Restructure** - Abilities now saved to `00001 Abilities/` so `00000 Hooks/` loads first
+- **Right-Click Menu Unification** - Context menu in visual editor now opens the same dialogs as Quick Actions panel
+- **Bypass Accuracy Node Size** - Fixed `trigger_on_bypass_chance_of_hit` node to use standard trigger dimensions (220×75)
+
+### Bug Fixes
+
+- **Trigger Detection** - Fixed connection option filtering for triggers with `cat_*` categories (e.g., weather/terrain triggers)
+- **State Persistence** - Fixed visual builder state persisting between different abilities when switching
+- **Show Ability Template** - Fixed generated code to use correct prefix based on trigger context (see Context-Aware Scene Prefix above)
+- **Trigger Deletion Navigation** - No longer navigates to trigger selector when deleting connections; only navigates when last trigger node is removed
+- **Metadata Loading** - Fixed node positions not being restored when editing abilities; metadata is now correctly loaded from `Data/ABRA/metadata/` JSON files
+- **Metadata Saving** - Fixed critical bug where metadata was never saved when editing abilities; the view was being cleared before data capture
+
+
+---
+
 ## 0.3.0 - 1/28/2026
 
 ### New Features
