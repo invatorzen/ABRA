@@ -10,7 +10,7 @@
   <p align="center">
     <i>Ability Builder & Refinement Assistant for Pokémon SDK</i>
     <br /> <br />
-    <a href="https://github.com/invatorzen/ABRA/releases"><strong>Download v0.3.1</strong></a>
+    <a href="https://github.com/invatorzen/ABRA/releases"><strong>Download v0.3.2</strong></a>
     <br />
     <br />
     <a href="https://github.com/invatorzen/ABRA/issues">Report Bugs</a>
@@ -26,11 +26,12 @@
 
 A.B.R.A. (Ability Builder & Refinement Assistant) is a specialized tool designed for Pokémon SDK (PSDK) developers to create and implement battle abilities without requiring extensive knowledge of Ruby scripting. It provides both a **Visual Node Editor** and a traditional **Script Editor** for defining ability logic, with a live natural language summary panel.
 
-## ✨ What's New in v0.3.1
+## ✨ What's New in v0.3.2
 
-- **Bypass Hit Chance Hook** - New trigger for abilities that guarantee moves hit
-- **Node Editing** - Double-click action nodes to edit their values in dialogs
-- **Hook Auto-Installation** - Required hook scripts are auto-created on project load
+- **Triggers to Hooks Refactor** - Updated all terminology to "Hooks" to align with PSDK 0.26 standards
+- **Comprehensive Naming Alignment** - Updated directories, class names, variables, and translation keys
+- **Bypass Hit Chance Hook** - New hook for abilities that guarantee moves hit (v0.3.1)
+- **Node Editing** - Double-click action nodes to edit their values in dialogs (v0.3.1)
 
 See [CHANGELOG.md](CHANGELOG.md) for full details.
 
@@ -38,12 +39,12 @@ See [CHANGELOG.md](CHANGELOG.md) for full details.
 
 ### Visual Node Editor
 - **Node-Based Logic Builder** - Create ability logic by connecting visual nodes instead of writing Ruby code
-- **25+ Trigger Nodes** - All battle events available as draggable nodes with automatic categorization
+- **25+ Hook Nodes** - All battle events available as draggable nodes with automatic categorization
 - **Action Nodes** - Visual nodes for HP changes, stat changes, status effects, weather, terrain, messages, and more
 - **Condition Nodes** - If/Unless blocks with branching logic (true/false paths)
 - **Utility Nodes** - Raw code, comments, stop ability, and return value nodes
 - **Smart Connections** - Drag to connect nodes with automatic socket matching
-- **Context-Aware Code Generation** - Generates correct prefixes based on connected trigger type
+- **Context-Aware Code Generation** - Generates correct prefixes based on connected hook type
 - **Node Editing** - Double-click or right-click nodes to edit their parameters
 - **Zoom & Pan** - Mouse wheel zoom and drag to pan the canvas
 
@@ -59,7 +60,7 @@ See [CHANGELOG.md](CHANGELOG.md) for full details.
 - **Ability Summary Panel** - Live panel that translates your code into human-readable descriptions as you type
 - **Parameter Intelligence** - Context-aware tooltips for 17+ common parameters (@target, handler, skill, etc.)
 - **Metadata Management** - Define internal symbols, and multi-language names and descriptions
-- **Event / Trigger System** - Select from 25+ battle events/triggers with specialized logic hooks
+- **Event / Hook System** - Select from 25+ battle events/hooks with specialized logic hooks
 - **Script Generation** - Automatically generates PSDK-compatible Ruby code
 - **Condition Library** - Searchable interface with **140+ pre-defined battle conditions**
 - **Safe Ability Updates** - Edit existing abilities with overwrite protection and proper file management
@@ -138,7 +139,7 @@ The generated Ruby code utilizes the `Battle::Effects::Ability` base class and i
 - **@target** - The ability owner (the Pokémon with this ability)
 - **Battlers** - All alive Pokémon on the field (available in end-of-turn events)
 - **Logic** - The battle logic controller (provides access to handlers)
-- **Handler** - Battle event handler passed to many triggers (provides access to scene, logic, etc.)
+- **Handler** - Battle event handler passed to many hooks (provides access to scene, logic, etc.)
 
 ## Contributing
 
