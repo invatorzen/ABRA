@@ -10,7 +10,7 @@
   <p align="center">
     <i>Ability Builder & Refinement Assistant for Pokémon SDK</i>
     <br /> <br />
-    <a href="https://github.com/invatorzen/ABRA/releases"><strong>Download v0.3.2</strong></a>
+    <a href="https://github.com/invatorzen/ABRA/releases"><strong>Download v0.3.3</strong></a>
     <br />
     <br />
     <a href="https://github.com/invatorzen/ABRA/issues">Report Bugs</a>
@@ -26,12 +26,12 @@
 
 A.B.R.A. (Ability Builder & Refinement Assistant) is a specialized tool designed for Pokémon SDK (PSDK) developers to create and implement battle abilities without requiring extensive knowledge of Ruby scripting. It provides both a **Visual Node Editor** and a traditional **Script Editor** for defining ability logic, with a live natural language summary panel.
 
-## ✨ What's New in v0.3.2
+## ✨ What's New in v0.3.3
 
-- **Triggers to Hooks Refactor** - Updated all terminology to "Hooks" to align with PSDK 0.26 standards
-- **Comprehensive Naming Alignment** - Updated directories, class names, variables, and translation keys
-- **Bypass Hit Chance Hook** - New hook for abilities that guarantee moves hit (v0.3.1)
-- **Node Editing** - Double-click action nodes to edit their values in dialogs (v0.3.1)
+- **Auto-Updater** - Built-in update system that automatically checks for new versions on startup and applies updates upon application restart.
+- **Improved UI/UX** - Modernized update notification dialog with rich text indentation and color-coded release notes.
+- **Hook Parameter UI Refinement** - Restored original aesthetic for the Hook Selector: parameter subtitles are now hidden for hooks without parameters.
+- **Triggers to Hooks Refactor** - Updated all terminology to "Hooks" to align with PSDK terminology.
 
 See [CHANGELOG.md](CHANGELOG.md) for full details.
 
@@ -64,6 +64,7 @@ See [CHANGELOG.md](CHANGELOG.md) for full details.
 - **Script Generation** - Automatically generates PSDK-compatible Ruby code
 - **Condition Library** - Searchable interface with **140+ pre-defined battle conditions**
 - **Safe Ability Updates** - Edit existing abilities with overwrite protection and proper file management
+- **Auto-Updater** - Integrated GitHub-based update system with background downloads and seamless installation
 - **Tab Sync** - Visual and Script tabs stay synchronized when switching
 
 ## Quick Actions
