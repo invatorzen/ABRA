@@ -10,7 +10,7 @@
   <p align="center">
     <i>Ability Builder & Refinement Assistant for Pokémon SDK</i>
     <br /> <br />
-    <a href="https://github.com/invatorzen/ABRA/releases"><strong>Download v0.3.3</strong></a>
+    <a href="https://github.com/invatorzen/ABRA/releases"><strong>Download v0.3.4</strong></a>
     <br />
     <br />
     <a href="https://github.com/invatorzen/ABRA/issues">Report Bugs</a>
@@ -26,12 +26,11 @@
 
 A.B.R.A. (Ability Builder & Refinement Assistant) is a specialized tool designed for Pokémon SDK (PSDK) developers to create and implement battle abilities without requiring extensive knowledge of Ruby scripting. It provides both a **Visual Node Editor** and a traditional **Script Editor** for defining ability logic, with a live natural language summary panel.
 
-## ✨ What's New in v0.3.3
+## ✨ What's New in v0.3.4
 
-- **Auto-Updater** - Built-in update system that automatically checks for new versions on startup and applies updates upon application restart.
-- **Improved UI/UX** - Modernized update notification dialog with rich text indentation and color-coded release notes.
-- **Hook Parameter UI Refinement** - Restored original aesthetic for the Hook Selector: parameter subtitles are now hidden for hooks without parameters.
-- **Triggers to Hooks Refactor** - Updated all terminology to "Hooks" to align with PSDK terminology.
+- **Standardized Node Labels** - All visual nodes now precisely match their PSDK hook names (e.g. "On Pre Item Change").
+- **Expanded Translations** - Removed shorthands like "Prev" in favor of full words like "Prevention" across all languages.
+- **Improved Hook Selector** - Added new categories for Items, Abilities, and Transform effects.
 
 See [CHANGELOG.md](CHANGELOG.md) for full details.
 

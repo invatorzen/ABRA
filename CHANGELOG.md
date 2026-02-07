@@ -2,6 +2,18 @@
 
 All notable changes to A.B.R.A. (Ability Builder & Refinement Assistant) will be documented in this file.
 
+## 0.3.4 - 02/07/2026
+
+### UI/UX
+- [Fix] **Hook Name Text** - All hooks were showing incorrect text due to previously being "triggers" instead of "hooks".
+- [Fix] **Standardized Node Labels** - Standardized all node labels to match their Ruby hook names exactly (e.g., "On Pre Item Change" instead of "Pre-Item Change").
+- [Fix] **Expanded Abbreviations** - Expanded all shorthand like "Prev" to "Prevention" across English and French translations for maximum clarity.
+
+### Features
+- [Added] **New Category Translations** - Added and translated the new `cat_transform`, `cat_items`, and `cat_ability` categories.
+
+---
+
 ## 0.3.3 - 02/05/2026
 
 ### UI/UX
@@ -22,7 +34,7 @@ All notable changes to A.B.R.A. (Ability Builder & Refinement Assistant) will be
 ### Improvements
 - [Fix] **Hook Parameter UI Refinement** - Restored original aesthetic for the Hook Selector: parameter subtitles are now hidden for hooks without parameters.
 - [Fix] **Standardized Node Sizes** - New hook nodes automatically use the standard 220x75 dimensions.
-- [Added] **Localization** - Added full English, French, and Spanish translations for the new hooks.
+- [Added] **Localization Expansion** - Added full English, French, and Spanish translations for the new hooks.
 
 ---
 
