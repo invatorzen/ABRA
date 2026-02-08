@@ -2,6 +2,20 @@
 
 All notable changes to A.B.R.A. (Ability Builder & Refinement Assistant) will be documented in this file.
 
+## 0.3.5 - 02/07/2026
+
+### Visual Builder Improvements
+- [Feature] **Quick suggestions** - A new stop/return/if quick action section has been added to the suggestions panel. It now intelligently target the active or last selected hook when multiple hooks are present.
+- [Feature] **Active Hook Tracking** - Implemented robust tracking for the "active" hook instance based on user selection, ensuring actions match user intent.
+- [Fix] **Dynamic Parameter Substitution** - Quick suggestions now correctly display actual parameter names (e.g., "Move" instead of "Skill") including proper capitalization for UI labels.
+- [Fix] **Visual Hook Persistence** - Fixed a bug where adding a new hook would cause existing empty hooks to be deleted; all hooks on canvas are now preserved.
+
+### Features
+- [Feature] **Move Effectiveness Hook** - Added `on_effectiveness_multiplier` hook that allows abilities to modify move effectiveness (e.g., return `2.0` for double effectiveness).
+- [Feature] **Hook Auto-Installation** - ABRA now automatically installs the `EffectivenessMultiplier` PSDK extension script if missing in the project.
+
+---
+
 ## 0.3.4 - 02/07/2026
 
 ### UI/UX
@@ -10,7 +24,7 @@ All notable changes to A.B.R.A. (Ability Builder & Refinement Assistant) will be
 - [Fix] **Expanded Abbreviations** - Expanded all shorthand like "Prev" to "Prevention" across English and French translations for maximum clarity.
 
 ### Features
-- [Added] **New Category Translations** - Added and translated the new `cat_transform`, `cat_items`, and `cat_ability` categories.
+- [Feature] **New Hook Categories** - Added and translated the new `cat_transform`, `cat_items`, and `cat_ability` categories.
 
 ---
 
