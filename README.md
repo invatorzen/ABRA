@@ -26,7 +26,7 @@
 
 A.B.R.A. (Ability Builder & Refinement Assistant) is a specialized tool designed for Pokémon SDK (PSDK) developers to create and implement battle abilities without requiring extensive knowledge of Ruby scripting. It provides both a **Visual Node Editor** and a traditional **Script Editor** for defining ability logic, with a live natural language summary panel.
 
-## ✨ What's New in v0.3.5
+## ✨ What's New in v0.4.0
 
 - **Quick suggestions** - Quick Actions now intelligently target the active hook, keeping suggestions relevant when multiple hooks are on the canvas.
 - **Move Effectiveness Hook** - New `on_effectiveness_multiplier` hook allows abilities to modify move effectiveness globally.
