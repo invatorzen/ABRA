@@ -10,7 +10,7 @@
   <p align="center">
     <i>Ability Builder & Refinement Assistant for Pokémon SDK</i>
     <br /> <br />
-    <a href="https://github.com/invatorzen/ABRA/releases"><strong>Download v0.3.5</strong></a>
+    <a href="https://github.com/invatorzen/ABRA/releases"><strong>Download v0.4.0</strong></a>
     <br />
     <br />
     <a href="https://github.com/invatorzen/ABRA/issues">Report Bugs</a>
@@ -126,9 +126,9 @@ Language settings are persisted in the local configuration and can be switched a
 
 ABRA automates the creation of three critical components for PSDK:
 1. **JSON Data** - Generates the ability data file located in `Data/Studio/abilities/` using the db_symbol as filename.
-2. **Ruby Logic** - Creates a context-aware Ruby script in `scripts/00001 ABRA_Scripts/00001 Abilities/` with indexed filenames (e.g., `00000 FlashFire.rb`).
+2. **Ruby Logic** - Creates a context-aware Ruby script in `scripts/00001 ABRA_Scripts/00001 Effects/00001 Abilities/` with indexed filenames (e.g., `00000 FlashFire.rb`).
 3. **Text Data** - Updates the local text database (CSV) for ability names and descriptions.
-4. **Hook Scripts** - Auto-creates required hook scripts in `scripts/00001 ABRA_Scripts/00000 Hooks/` if missing.
+4. **Hook Scripts** - Auto-creates required hook scripts in `scripts/00001 ABRA_Scripts/00001 Effects/00000 Hooks/` if missing.
 5. **Metadata** - Saves node positions and graph data to `Data/ABRA/metadata/` for visual editor persistence.
 
 The generated Ruby code utilizes the `Battle::Effects::Ability` base class and implements hooks that interact with the PSDK battle logic handlers (DamageHandler, StatChangeHandler, etc.).
