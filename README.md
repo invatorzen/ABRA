@@ -10,11 +10,10 @@
   <p align="center">
     <i>Ability Builder & Refinement Assistant for Pokémon SDK</i>
     <br /> <br />
-    <a href="https://github.com/invatorzen/ABRA/releases"><strong>Download v0.4.0</strong></a>
+    <a href="https://github.com/invatorzen/ABRA/releases"><strong>Download v0.4.1</strong></a>
     <br />
     <br />
     <a href="https://github.com/invatorzen/ABRA/issues">Report Bugs</a>
-      
 
   [![python badge](https://forthebadge.com/images/badges/made-with-python.svg)](https://forthebadge)
   [![psdk badge](https://raw.githubusercontent.com/invatorzen/Invatorzens_PSDKPlugins/refs/heads/main/svgs/made_for_psdk.svg)](https://gitlab.com/pokemonsdk/pokemonsdk)
@@ -26,18 +25,19 @@
 
 A.B.R.A. (Ability Builder & Refinement Assistant) is a specialized tool designed for Pokémon SDK (PSDK) developers to create and implement battle abilities without requiring extensive knowledge of Ruby scripting. It provides both a **Visual Node Editor** and a traditional **Script Editor** for defining ability logic, with a live natural language summary panel.
 
-## ✨ What's New in v0.4.0
+## ✨ What's New in v0.4.1
 
-- **Quick suggestions** - Quick Actions now intelligently target the active hook, keeping suggestions relevant when multiple hooks are on the canvas.
-- **Move Effectiveness Hook** - New `on_effectiveness_multiplier` hook allows abilities to modify move effectiveness globally.
-- **Improved UI Precision** - Dynamic parameter substitution (e.g. "Move" instead of "Skill") and proper capitalization across the interface.
-- **Enhanced Hook Persistence** - Adding new hooks no longer deletes existing empty ones, allowing for better multi-hook workflow.
+- **Set Effect Fix** - Resolved a code generation bug when using counters with the "Set Effect" action in the Visual Builder.
+- **Form Change Automation** - "Change Form" actions now automatically include their corresponding animation nodes.
+- **Discord Integration** - Official support server link added directly to the home screen.
+- **UI Refinements** - Improved layout and accessibility for project management.
 
 See [CHANGELOG.md](CHANGELOG.md) for full details.
 
 ## Features
 
 ### Visual Node Editor
+
 - **Node-Based Logic Builder** - Create ability logic by connecting visual nodes instead of writing Ruby code
 - **25+ Hook Nodes** - All battle events available as draggable nodes with automatic categorization
 - **Action Nodes** - Visual nodes for HP changes, stat changes, status effects, weather, terrain, messages, and more
@@ -49,6 +49,7 @@ See [CHANGELOG.md](CHANGELOG.md) for full details.
 - **Zoom & Pan** - Mouse wheel zoom and drag to pan the canvas
 
 ### Script Editor
+
 - **Advanced Code Editor** - Dedicated workspace with line numbers, syntax highlighting, and PSDK-standard indentation
 - **Keyboard Shortcuts** - Ctrl+D duplicate, Ctrl+/ comment toggle, Ctrl+Shift+Up/Down move lines
 - **Auto-Close Brackets** - Typing `(`, `[`, `{`, `"`, or `'` automatically inserts the closing character
@@ -56,6 +57,7 @@ See [CHANGELOG.md](CHANGELOG.md) for full details.
 - **Code Hover Tooltips** - Hover over parameters to see descriptions
 
 ### Core Features
+
 - **Project Integration** - Connects directly to existing PSDK projects by loading .studio files
 - **Ability Summary Panel** - Live panel that translates your code into human-readable descriptions as you type
 - **Parameter Intelligence** - Context-aware tooltips for 17+ common parameters (@target, handler, skill, etc.)
@@ -111,11 +113,13 @@ The condition picker organizes 140+ conditions into searchable categories:
 ## Installation
 
 ### Using Executable
+
 Download the latest version from the [releases page](https://github.com/invatorzen/ABRA/releases) and run `ABRA.exe`.
 
 ## Internationalization
 
 ABRA supports multiple languages for the interface and the condition library:
+
 - English
 - French
 - Spanish
@@ -125,6 +129,7 @@ Language settings are persisted in the local configuration and can be switched a
 ## Technical Details
 
 ABRA automates the creation of three critical components for PSDK:
+
 1. **JSON Data** - Generates the ability data file located in `Data/Studio/abilities/` using the db_symbol as filename.
 2. **Ruby Logic** - Creates a context-aware Ruby script in `scripts/00001 ABRA_Scripts/00001 Effects/00001 Abilities/` with indexed filenames (e.g., `00000 FlashFire.rb`).
 3. **Text Data** - Updates the local text database (CSV) for ability names and descriptions.
