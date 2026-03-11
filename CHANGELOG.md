@@ -2,14 +2,109 @@
 
 All notable changes to A.B.R.A. (Ability Builder & Refinement Assistant) will be documented in this file.
 
+## 0.5.0 - 03/11/2026
+
+### Complete Rewrite
+
+A.B.R.A. has been completely rebuilt from the ground up using **Tauri v2**, **React**, **TypeScript**, and **React Flow (XYFlow)**. This is a full rewrite — every screen, feature, and interaction has been redesigned for a modern, fast, native desktop experience while retaining all existing functionality.
+
+### Visual Builder
+
+- [Added] **React Flow Canvas** - Fully interactive node graph powered by React Flow with snap-to-grid, zoom, pan, and minimap
+- [Added] **Minimap Auto-Fade** - The minimap fades out after 2.5 seconds of inactivity and reappears on interaction
+- [Added] **Node Type Legend** - Color-coded legend displayed on the canvas
+- [Added] **Node Animations** - Smooth creation and deletion animations for nodes
+- [Added] **Context Menus** - Right-click menus on nodes (Edit, Copy, Paste, Delete, Select Connected), edges (Delete Connection), and the canvas (Add Hook, Paste)
+- [Added] **Select Connected Nodes** - Select all connected nodes forward, backward, or in both directions from a node
+- [Added] **Resizable Sidebar** - The sidebar can be dragged to resize (200px–600px) and collapsed/expanded with a toggle button
+- [Added] **Auto-Layout / Reposition** - Intelligent hierarchical left-to-right layout with guard condition detection and subtree height calculation
+- [Added] **Colored Edges** - Connections are color-coded: gray (default), green (true branch), red/orange (false branch)
+- [Added] **V1 Migration** - Automatically detects and converts ABRA pre-0.5.0 metadata to the new React Flow format with a toast notification
+
+### Import Official Abilities
+
+- [Added] **Browse Official Abilities** - Searchable, sortable list of all official PSDK abilities with descriptions
+- [Added] **Ruby Source Preview** - Syntax-highlighted preview of the official ability source code with line numbers and copy-to-clipboard
+- [Added] **One-Click Import** - Import official abilities directly into your graph with automatic Ruby-to-nodes parsing
+- [Added] **PSDK Submodule Management** - Automatically detects the `pokemonsdk` submodule; offers to clone it with real-time progress logging if missing
+- [Added] **Conflict Resolution** - When importing into an existing graph, choose "Overwrite All" or "Add Alongside"
+
+### New Quick Actions
+
+- [Added] **Execute Move** - Execute a specific move with a searchable move selector backed by PSDK move data
+- [Added] **Set Array** - Create array instance variables for tracking lists of values
+- [Added] **Check Array** - Check array contents for conditional logic
+- [Added] **Custom Method** - Create custom methods to be used in the visual builder
+- [Added] **Call Method** - Call custom methods from the visual builder
+
+### UI & UX
+
+- [Added] **Modern Dark & Light Themes** - Fully redesigned theme system with comprehensive color tokens for every UI element
+- [Added] **Light Mode Polish** - Dedicated pass ensuring all components look polished in light mode
+- [Added] **Inset Card Styling** - Consistent inset/recessed card styling across all list views (hook selector, ability list, import modal)
+- [Added] **Top Bar** - Persistent header with breadcrumb navigation, tab switcher, language selector, theme toggle, and Discord link
+
+### Project Management
+
+- [Added] **Project Selector** - Clean home screen showing recent projects (up to 5) with one-click re-open and project validation
+- [Added] **Project Dashboard** - Two-card landing page after project open: "Create New Ability" and "Manage Abilities"
+- [Added] **Script Checker** - Automatic detection and one-click installation of missing ABRA core Ruby scripts on project open
+
+### Manage Abilities
+
+- [Added] **Enhanced Ability Cards** - Each card shows display name, `:db_symbol`, hook count, script filename, and description
+- [Added] **Search & Sort** - Filter by name, symbol, filename, or description; sort by alphabetical, date, hook count, or script order
+- [Added] **Delete with Confirmation** - Delete button with a confirmation dialog listing all three files that will be removed
+
+### Ability Creation
+
+- [Added] **Multi-Language Names & Descriptions** - Per-language translation tags with add/remove per language code
+- [Added] **Auto db_symbol Generation** - Automatically converts ability name to a valid `:db_symbol` with duplicate detection
+- [Added] **12 Hook Categories** - 60+ hooks organized into: Movement, Turn, Damage & Healing, Stats (Global), Stats (Combat), Status, Move Multipliers, Move Accuracy, Move Prevention, Weather & Terrain, Items, and Ability
+
+### Ruby Script View
+
+- [Added] **Live Code Generation** - Full Ruby class generated from the node graph in real time
+- [Added] **Syntax Highlighting** - Regex-based Ruby syntax highlighting with per-hook section dividers
+- [Added] **Copy to Clipboard** - One-click copy of the generated Ruby code
+
+### Infrastructure
+
+- [Added] **Tauri v2 Backend** - Rust-powered backend for file I/O, project validation, script installation, and PSDK data loading
+- [Added] **Zustand State Management** - Centralized store for project state, abilities, items, types, moves, and UI preferences
+- [Added] **Internationalization** - English, French, and Spanish with all strings loaded from a compiled translations file
+
+### Custom Methods
+
+- [Added] **Custom Method Nodes** - Define reusable Ruby methods directly on the canvas as entry-point nodes with configurable name, parameters, documentation, and visibility (public/private)
+- [Added] **Call Method Action** - New quick action to invoke custom methods defined on the canvas, with argument passing and parameter hints
+- [Added] **Import Custom Methods** - Official ability imports now extract custom methods alongside hooks, with class hierarchy detection and targeted imports
+
+### Import Improvements
+
+- [Added] **Class Hierarchy Detection** - Import system now maps all classes in a file and detects the target class via `register(:symbol, ClassName)` patterns
+- [Added] **Method Metadata Preservation** - Captures documentation comments, visibility, and parameter lists during import
+
+### Messages
+
+- [Added] **Raw Pokemon Message Type** - New message variant with Pokemon nickname interpolation using `[VAR PKNICK(0)]` tag syntax and target selection
+
+### Bug Fixes
+
+- [Fixed] **Apostrophe Auto-Escape** - Message text containing single quotes is now automatically escaped to prevent Ruby syntax errors
+- [Fixed] **Visual Builder Navigation** - Fixed issue where backing out of the visual builder when overwriting did not work correctly
+- [Fixed] **PSDK Submodule Extraction** - Switched to PowerShell for zip extraction on Windows for better compatibility
+
+---
+
 ## 0.4.1 - 02/24/2026
 
 ### Visual Builder Improvements
 
-- [Fix] **Set Effect Counter** - Fixed a bug where providing a counter value in the "Set Effect" action would cause a code generation error.
-- [Feature] **Expanded Set Effects** - Added support for Perish Song.
-- [Feature] **Summary Improvement** - Updated the "Set Effect" node summary to include turn counts (e.g., "for 3 turns") for better clarity.
-- [Feature] **Form Change Animation Coupling** - "Change Form" nodes now automatically create and connect a "Show Change Form Animation" node when generated, ensuring visual consistency.
+- [Fixed] **Set Effect Counter** - Fixed a bug where providing a counter value in the "Set Effect" action would cause a code generation error.
+- [Added] **Expanded Set Effects** - Added support for Perish Song.
+- [Added] **Summary Improvement** - Updated the "Set Effect" node summary to include turn counts (e.g., "for 3 turns") for better clarity.
+- [Added] **Form Change Animation Coupling** - "Change Form" nodes now automatically create and connect a "Show Change Form Animation" node when generated, ensuring visual consistency.
 
 ### UI & UX
 
@@ -21,18 +116,18 @@ All notable changes to A.B.R.A. (Ability Builder & Refinement Assistant) will be
 
 ### Visual Builder Improvements
 
-- [Feature] **Node Copy-Paste** - Implemented the ability to copy and paste nodes using `Ctrl+C` and `Ctrl+V`.
-- [Feature] **Connection Preservation** - Connections between selected nodes are automatically captured and restored when pasted.
-- [Feature] **Hook Node Metadata Display** - Parameter names and return types are now displayed directly on hook node headers for better context.
+- [Added] **Node Copy-Paste** - Implemented the ability to copy and paste nodes using `Ctrl+C` and `Ctrl+V`.
+- [Added] **Connection Preservation** - Connections between selected nodes are automatically captured and restored when pasted.
+- [Added] **Hook Node Metadata Display** - Parameter names and return types are now displayed directly on hook node headers for better context.
 - [Added] **Move History Conditions** - Added specific conditions for launcher's last move category (Physical/Special/Status) and repeated move checks.
-- [Feature] **Context Menu Integration** - Added "Copy" and "Paste" options to both the main canvas and individual node context menus.
-- [Feature] **Intelligent Pasting** - Supports relative spatial offsets, singleton node protection, and full parameter persistence.
+- [Added] **Context Menu Integration** - Added "Copy" and "Paste" options to both the main canvas and individual node context menus.
+- [Added] **Intelligent Pasting** - Supports relative spatial offsets, singleton node protection, and full parameter persistence.
 - [Added] **Random Choice Node** - Added a new utility node for creating probabilistic branching logic with dynamic output sockets.
 - [Added] **Base Stat Comparisons** - Added 12 new conditions for comparing target/attacker base stats (Atk, Def, Sp.Atk, Sp.Def, Spd, and BST) in the Visual Builder.
-- [Fix] **Intelligent Parameter Mapping** - Updated aliases to treat `user`/`launcher` and `target`/`who` as interchangeable, ensuring conditions appear correctly across all hook types.
-- [Fix] **Ability Summary Logic** - Fixed misleading explanations for return values, added support for inline `if`/`unless`, and implemented descriptive naturalization for technical symbols (e.g., `:atk` → attack).
-- [Fix] **Safe Debouncing** - Fixed a critical `ValueError` crash when cancelling pending updates during rapid typing.
-- [Fix] **Label Rendering** - Fixed a crash caused by the unsupported `line_spacing` attribute in some UI labels.
+- [Fixed] **Intelligent Parameter Mapping** - Updated aliases to treat `user`/`launcher` and `target`/`who` as interchangeable, ensuring conditions appear correctly across all hook types.
+- [Fixed] **Ability Summary Logic** - Fixed misleading explanations for return values, added support for inline `if`/`unless`, and implemented descriptive naturalization for technical symbols (e.g., `:atk` → attack).
+- [Fixed] **Safe Debouncing** - Fixed a critical `ValueError` crash when cancelling pending updates during rapid typing.
+- [Fixed] **Label Rendering** - Fixed a crash caused by the unsupported `line_spacing` attribute in some UI labels.
 - [Added] **Summary Translation Specialization** - New `sum_` translation prefix system allowing conditions to have more descriptive phrasing specifically for the summary panel.
 
 ### New Hooks
@@ -43,31 +138,31 @@ All notable changes to A.B.R.A. (Ability Builder & Refinement Assistant) will be
 ### Features & Infrastructure
 
 - [Added] **BST Helper Method** - Added `PFM::Pokemon#base_stat_total` to provide easy access to Base Stat Total in your scripts and the Visual Builder.
-- [Feature] **Directory Standardization** - Refined script structure to use `00001 Effects` as the primary container for ABRA-generated logic.
-- [Feature] **Smart Suggestions** - Move history categories and `skill`/`move` conditions are prioritizing when relevant parameters are available.
-- [Feature] **Instance Variable Discovery** - Graph-defined instance variables (`@var`) are now automatically detected and suggested in the Quick Suggestions panel.
+- [Added] **Directory Standardization** - Refined script structure to use `00001 Effects` as the primary container for ABRA-generated logic.
+- [Added] **Smart Suggestions** - Move history categories and `skill`/`move` conditions are prioritizing when relevant parameters are available.
+- [Added] **Instance Variable Discovery** - Graph-defined instance variables (`@var`) are now automatically detected and suggested in the Quick Suggestions panel.
 
 ### Workflow & Productivity
 
 - [Added] **Save Shortcut (Ctrl+S)** - Added a global `Ctrl+S` shortcut to trigger the "Update Ability" / "Finish" action from anywhere in the editor.
-- [Fix] **Save Flow Stability** - Fixed a bug where cancelling the save preview would leave the application in a broken state.
-- [Fix] **Modal Hardening** - Shortcuts and duplicate triggers are now correctly ignored when modal dialogs or preview panels are active.
+- [Fixed] **Save Flow Stability** - Fixed a bug where cancelling the save preview would leave the application in a broken state.
+- [Fixed] **Modal Hardening** - Shortcuts and duplicate triggers are now correctly ignored when modal dialogs or preview panels are active.
 
 ### Instance Variables
 
 - [Added] **Instance Variable Node** - Added "Set Variable (@)" node to persist state across hooks (e.g., `@my_flag`).
-- [Feature] **Variable Suggestions & Conditions** - Discovered variables automatically appear in Quick Suggestions and the Condition Picker dialog.
+- [Added] **Variable Suggestions & Conditions** - Discovered variables automatically appear in Quick Suggestions and the Condition Picker dialog.
 
 ### Ability Management & UI Refinements
 
-- [Feature] **Manage Abilities Enhancements** - Made the Manage Abilities screen more compact.
-- [Feature] **Official PSDK Descriptions** - Abilities now pull localized descriptions directly from the project's official CSV files (`100005.csv`).
+- [Added] **Manage Abilities Enhancements** - Made the Manage Abilities screen more compact.
+- [Added] **Official PSDK Descriptions** - Abilities now pull localized descriptions directly from the project's official CSV files (`100005.csv`).
 - [Added] **Script Order Sorting** - Added "Script Order" as the default sorting method to match the official PSDK database order.
-- [Feature] **Sort Direction Toggle** - New ascending/descending toggle (↑/↓) for all sorting methods with icon indicators.
-- [Feature] **Persistent Preferences** - Sorting methods and directions are now automatically saved and restored from the user configuration.
-- [Feature] **Missing Description Placeholder** - Replaced technical summaries with a clean `(Missing description)` localized placeholder for unfinished abilities.
-- [Fix] **Home Screen Layout** - Resolved critical layout gaps on the Project Selector screen by fixing row weight distribution and tightening card padding.
-- [Fix] **Encoding Robustness** - Hardened translation and CSV loading to automatically handle multiple encodings (UTF-8, Windows-1252, Latin-1), preventing crashes on special characters.
+- [Added] **Sort Direction Toggle** - New ascending/descending toggle (↑/↓) for all sorting methods with icon indicators.
+- [Added] **Persistent Preferences** - Sorting methods and directions are now automatically saved and restored from the user configuration.
+- [Added] **Missing Description Placeholder** - Replaced technical summaries with a clean `(Missing description)` localized placeholder for unfinished abilities.
+- [Fixed] **Home Screen Layout** - Resolved critical layout gaps on the Project Selector screen by fixing row weight distribution and tightening card padding.
+- [Fixed] **Encoding Robustness** - Hardened translation and CSV loading to automatically handle multiple encodings (UTF-8, Windows-1252, Latin-1), preventing crashes on special characters.
 
 ---
 
@@ -75,15 +170,15 @@ All notable changes to A.B.R.A. (Ability Builder & Refinement Assistant) will be
 
 ### Visual Builder Improvements
 
-- [Feature] **Quick suggestions** - A new stop/return/if quick action section has been added to the suggestions panel. It now intelligently target the active or last selected hook when multiple hooks are present.
-- [Feature] **Active Hook Tracking** - Implemented robust tracking for the "active" hook instance based on user selection, ensuring actions match user intent.
-- [Fix] **Dynamic Parameter Substitution** - Quick suggestions now correctly display actual parameter names (e.g., "Move" instead of "Skill") including proper capitalization for UI labels.
-- [Fix] **Visual Hook Persistence** - Fixed a bug where adding a new hook would cause existing empty hooks to be deleted; all hooks on canvas are now preserved.
+- [Added] **Quick suggestions** - A new stop/return/if quick action section has been added to the suggestions panel. It now intelligently target the active or last selected hook when multiple hooks are present.
+- [Added] **Active Hook Tracking** - Implemented robust tracking for the "active" hook instance based on user selection, ensuring actions match user intent.
+- [Fixed] **Dynamic Parameter Substitution** - Quick suggestions now correctly display actual parameter names (e.g., "Move" instead of "Skill") including proper capitalization for UI labels.
+- [Fixed] **Visual Hook Persistence** - Fixed a bug where adding a new hook would cause existing empty hooks to be deleted; all hooks on canvas are now preserved.
 
 ### Features
 
 - [Added] **Move Effectiveness Hook** - Added `on_effectiveness_multiplier` hook that allows abilities to modify move effectiveness (e.g., return `2.0` for double effectiveness).
-- [Feature] **Hook Auto-Installation** - ABRA now automatically installs the `EffectivenessMultiplier` PSDK extension script if missing in the project.
+- [Added] **Hook Auto-Installation** - ABRA now automatically installs the `EffectivenessMultiplier` PSDK extension script if missing in the project.
 
 ---
 
@@ -91,9 +186,9 @@ All notable changes to A.B.R.A. (Ability Builder & Refinement Assistant) will be
 
 ### UI/UX
 
-- [Fix] **Hook Name Text** - All hooks were showing incorrect text due to previously being "triggers" instead of "hooks".
-- [Fix] **Standardized Node Labels** - Standardized all node labels to match their Ruby hook names exactly (e.g., "On Pre Item Change" instead of "Pre-Item Change").
-- [Fix] **Expanded Abbreviations** - Expanded all shorthand like "Prev" to "Prevention" across English and French translations for maximum clarity.
+- [Fixed] **Hook Name Text** - All hooks were showing incorrect text due to previously being "triggers" instead of "hooks".
+- [Fixed] **Standardized Node Labels** - Standardized all node labels to match their Ruby hook names exactly (e.g., "On Pre Item Change" instead of "Pre-Item Change").
+- [Fixed] **Expanded Abbreviations** - Expanded all shorthand like "Prev" to "Prevention" across English and French translations for maximum clarity.
 
 ### Features
 
@@ -107,7 +202,7 @@ All notable changes to A.B.R.A. (Ability Builder & Refinement Assistant) will be
 
 - [Added] **"What's New" Dialog** - Modernized update notification dialog.
 - [Added] **Rich Text Release Notes** - Support for nested bullet points and indentation.
-- [Added] **Tag Highlighting** - Automatic color highlighting for tags like [Added], [Fix], [Feature].
+- [Added] **Tag Highlighting** - Automatic color highlighting for tags like [Added], [Fixed], [Added].
 - [Added] **Visual Badges** - Colored version badges and improved action buttons.
 
 ### New Features
@@ -117,13 +212,13 @@ All notable changes to A.B.R.A. (Ability Builder & Refinement Assistant) will be
   - **On Drain Prevention** (`on_drain_prevention`) - Under Damage category.
   - **On Type Multiplier Overwrite** (`on_single_type_multiplier_overwrite`) - Under Multipliers category.
   - **Specific Procedure Override** (`specific_proceed_internal`) - Under Prevention category.
-- [Feature] **Hook Visual Nodes** - Created and registered visual nodes for all 4 new hooks, making them immediately available in the Visual Builder.
-- [Feature] **Auto-Updater** - Implemented a built-in update system that automatically checks for new versions on startup via GitHub integration.
+- [Added] **Hook Visual Nodes** - Created and registered visual nodes for all 4 new hooks, making them immediately available in the Visual Builder.
+- [Added] **Auto-Updater** - Implemented a built-in update system that automatically checks for new versions on startup via GitHub integration.
 
 ### Improvements
 
-- [Fix] **Hook Parameter UI Refinement** - Restored original aesthetic for the Hook Selector: parameter subtitles are now hidden for hooks without parameters.
-- [Fix] **Standardized Node Sizes** - New hook nodes automatically use the standard 220x75 dimensions.
+- [Fixed] **Hook Parameter UI Refinement** - Restored original aesthetic for the Hook Selector: parameter subtitles are now hidden for hooks without parameters.
+- [Fixed] **Standardized Node Sizes** - New hook nodes automatically use the standard 220x75 dimensions.
 - [Added] **Localization Expansion** - Added full English, French, and Spanish translations for the new hooks.
 
 ---
@@ -132,7 +227,7 @@ All notable changes to A.B.R.A. (Ability Builder & Refinement Assistant) will be
 
 ### Alignment
 
-- [Feature] **Triggers to Hooks Alignment** - Renamed all project-wide references of "triggers" to "hooks" to align with PSDK terminology.
+- [Added] **Triggers to Hooks Alignment** - Renamed all project-wide references of "triggers" to "hooks" to align with PSDK terminology.
 - [Added] Support for `on_pre_accuracy_check` hook.
 
 ### Visual Builder Refinement
@@ -140,7 +235,7 @@ All notable changes to A.B.R.A. (Ability Builder & Refinement Assistant) will be
 - [Added] **Precise Node Connections** - Connection points now align with the center of "○" and "●" icons.
 - [Added] **Vertical Socket Centering** - Implemented automatic vertical centering for sockets.
 - [Added] **Edge-Aligned Connections** - Connection lines now attach directly to the absolute left and right edges.
-- [Fix] **Resizing Stability** - Fixed node resizing logic to be correctly scale-aware.
+- [Fixed] **Resizing Stability** - Fixed node resizing logic to be correctly scale-aware.
 
 ---
 
@@ -148,9 +243,9 @@ All notable changes to A.B.R.A. (Ability Builder & Refinement Assistant) will be
 
 ### Features
 
-- [Feature] **Bypass Hit Chance Hook** - New `on_bypass_chance_of_hit?` hook allows abilities to guarantee moves hit.
+- [Added] **Bypass Hit Chance Hook** - New `on_bypass_chance_of_hit?` hook allows abilities to guarantee moves hit.
 - [Added] **Hook Installation Check** - ABRA now checks for required hook scripts on project load and auto-creates them.
-- [Feature] **Node Editing** - Double-click or right-click → "Edit Node..." on action nodes to open dialogs pre-filled with current values.
+- [Added] **Node Editing** - Double-click or right-click → "Edit Node..." on action nodes to open dialogs pre-filled with current values.
 
 ### Improvements
 
@@ -158,13 +253,13 @@ All notable changes to A.B.R.A. (Ability Builder & Refinement Assistant) will be
 - [Added] **Context-Aware Scene Prefix** - `show_ability` and `wait_for_animation` nodes now generate the correct prefix based on hook context.
 - [Added] **Script-to-Visual Sync** - When switching from Script to Visual tab, existing nodes now update their parameters.
 - [Added] **Show Ability Quick Action** - Now creates two connected nodes (Show Ability Popup + Wait For Animation).
-- [Fix] **Show Ability Node Size** - Increased default size for better visibility.
+- [Fixed] **Show Ability Node Size** - Increased default size for better visibility.
 
 ### Bug Fixes
 
-- [Fix] **Hook Detection** - Fixed connection option filtering for hooks with `cat_*` categories.
-- [Fix] **Metadata Loading** - Fixed node positions not being restored when editing abilities.
-- [Fix] **Metadata Saving** - Fixed critical bug where metadata was never saved when editing abilities.
+- [Fixed] **Hook Detection** - Fixed connection option filtering for hooks with `cat_*` categories.
+- [Fixed] **Metadata Loading** - Fixed node positions not being restored when editing abilities.
+- [Fixed] **Metadata Saving** - Fixed critical bug where metadata was never saved when editing abilities.
 
 ---
 
