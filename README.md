@@ -17,7 +17,7 @@
     ·
     <a href="https://discord.gg/BHeRSFXGQK">Discord Community</a>
 
-  [![forthebadge](https://forthebadge.com/api/badges/community/019b4b6a-36fd-7412-9947-a2d4ba37909e.svg)](https://forthebadge.com)
+  [![forthebadge](https://raw.githubusercontent.com/invatorzen/ABRA/refs/heads/main/svg/made-with-typescript.svg)](https://forthebadge.com)
   [![psdk badge](https://raw.githubusercontent.com/invatorzen/Invatorzens_PSDKPlugins/refs/heads/main/svgs/made_for_psdk.svg)](https://gitlab.com/pokemonsdk/pokemonsdk)
   [![invatorzen badge](https://raw.githubusercontent.com/invatorzen/Invatorzens_PSDKPlugins/refs/heads/main/svgs/made_by_invatorzen.svg)](https://twitter.com/invatorzen)
   </p>
