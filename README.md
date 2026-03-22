@@ -10,7 +10,7 @@
   <p align="center">
     <i>Ability Builder & Refinement Assistant for Pokémon SDK</i>
     <br /> <br />
-    <a href="https://github.com/invatorzen/ABRA/releases"><strong>Download v0.5.0</strong></a>
+    <a href="https://github.com/invatorzen/ABRA/releases"><strong>Download v0.5.1</strong></a>
     <br />
     <br />
     <a href="https://github.com/invatorzen/ABRA/issues">Report Bugs</a>
@@ -27,22 +27,11 @@
 
 A.B.R.A. (Ability Builder & Refinement Assistant) is a native desktop application for Pokémon SDK (PSDK) developers to create and manage battle abilities without requiring extensive knowledge of Ruby scripting. Built with **Tauri v2**, **TypeScript**, **React**, and **React Flow**, it provides a visual node editor, live Ruby code generation, and deep integration with your PSDK project.
 
-## What's New in v0.5.0
+## What's New in v0.5.1
 
-**Complete rewrite** from Python to TypeScript.
-
-- **Custom Methods** - Define reusable Ruby methods as visual nodes with parameters, docs, and visibility controls, then call them from anywhere in your graph
-- **Import Official Abilities** - Browse, preview, and import any official PSDK ability (including custom methods) directly into your graph with one click
-- **PSDK Submodule Management** - Automatically detects and offers to clone the `pokemonsdk` submodule for official ability access
-- **Resizable Sidebar** - Drag to resize (200px–600px) or collapse the sidebar in the Visual Builder
-- **Minimap** - Auto-fading minimap with color-coded node types for canvas orientation
-- **Node Animations** - Smooth creation and deletion animations
-- **Context Menus** - Right-click menus on nodes, edges, and the canvas for quick actions
-- **Light Mode Polish** - Dedicated pass ensuring all components look polished in both themes
-- **Execute Move Action** - New quick action with a searchable move selector backed by PSDK data
-- **Array Variables** - Set Array and Check Array quick actions for tracking lists of values
-- **Raw Pokemon Messages** - Display custom battle text with Pokemon nickname interpolation
-- **V1 Migration** - Automatically converts Python ABRA v1 metadata to the new format
+- **HP Node Target Selection** - The Change HP node now lets you pick which Pokémon to base HP calculations off of
+- **Text Input Cursor Fix** - Fixed a bug where typing in the middle of a node's text input would jump the cursor to the end
+- **Stop Ability Node Cleanup** - Cleaner Stop Ability nodes without redundant summary text; imports now correctly set the Conditional dropdown
 
 See [CHANGELOG.md](CHANGELOG.md) for full details.
 

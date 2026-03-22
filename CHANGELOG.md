@@ -2,6 +2,21 @@
 
 All notable changes to A.B.R.A. (Ability Builder & Refinement Assistant) will be documented in this file.
 
+## 0.5.1 - 03/22/2026
+
+### Visual Builder Improvements
+
+- [Added] **HP Node Target Selection** - The Change HP node now lets you pick which Pokémon to base HP calculations off of
+- [Fixed] **Text Input Cursor Jumping** - Fixed a bug where typing in the middle of a text input inside a node would move the cursor to the end after each keystroke
+- [Fixed] **Stop Ability Node Cleanup** - Stop Ability nodes no longer show a redundant summary when no condition is set; the node just displays the header cleanly
+- [Fixed] **Stop Ability Import** - Imported Stop Ability nodes now correctly show the Conditional dropdown set to "None" instead of being empty
+
+### Translations
+
+- [Added] **Stop Ability Summary** - Added missing `sum_stop_ability` translation key for English, French, and Spanish
+
+---
+
 ## 0.5.0 - 03/11/2026
 
 ### Complete Rewrite
